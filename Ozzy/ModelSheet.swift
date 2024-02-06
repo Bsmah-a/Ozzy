@@ -12,9 +12,9 @@ struct ModesSheet: View {
     @Binding var selectedModel: Models
 
     let freemodel: [Models] = [
-        Models(model: "EatM.usdz", pic: "Eating_Mood", title: "Eat Mood", desc: "Eat with Ozzy"),
-        Models(model: "SleepM.usdz", pic: "Sleeping_Mood", title: "Sleep Mood", desc: "Nighty Night It's for Ozzy to sleep"),
-        Models(model: "NormalM77.usdz", pic: "Study_Mood", title: "Study Mood", desc: "Pick your book and study with Ozzy")
+        Models(model: "EatM.usdz", pic: "EatMood", title: "Eat Mood", desc: "Eat with Ozzy"),
+        Models(model: "SleepM.usdz", pic: "sleepMood", title: "Sleep Mood", desc: "Nighty Night It's for Ozzy to sleep"),
+        Models(model: "NormalM77.usdz", pic: "Study", title: "Study Mood", desc: "Pick your book and study with Ozzy")
     ]
     
         var body: some View {
@@ -42,14 +42,14 @@ struct ModesSheet: View {
                                                   print("the selected model is: \(Models.model)")
                                                   selectedModel = Models
                                         }) {
-                                            if Models.pic == "Study_Mood" {
+                                            if Models.pic == "Study" {
                                                 Text("Soon!").foregroundColor(.white)
                                             }else { Text("Apply!").foregroundColor(.white)}
                                             
                                         }.background(Color("Button"))
                                             .buttonStyle(.bordered)
                                             .cornerRadius(10).padding()
-                                            .disabled(Models.pic == "Study_Mood")
+                                            .disabled(Models.pic == "Study")
                                     }
                                 }
                                 .listRowBackground(Color("List"))

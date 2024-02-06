@@ -12,8 +12,8 @@ struct OnBoardingStep {
 }
 
 private let onBoardingSteps: [OnBoardingStep] = [
-    OnBoardingStep(image: "DefaultOzzy", title: "Who am I?", description: "Hi my name is Ozzy! I am exist to make your duty more fun"),
-    OnBoardingStep(image: "OzzyMoods", title: "My Modes", description: "I have different modes for you to simulate, such as eating, sleeping, and more upcoming!")
+    OnBoardingStep(image: "DefaultOzzy", title: "Who am I?", description: "Hi my name is Ozzy!\n I am exist to make your duty more fun"),
+    OnBoardingStep(image: "OzzyMoods", title: "My Modes", description: "I have different modes for you to simulate, \n such as eating, sleeping, and more upcoming!")
 ]
 
 struct Tutorial: View {
