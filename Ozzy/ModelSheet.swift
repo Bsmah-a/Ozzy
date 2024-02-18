@@ -12,9 +12,9 @@ struct ModesSheet: View {
     @Binding var selectedModel: Models
 
     let freemodel: [Models] = [
-        Models(model: "EatM.usdz", pic: "EatMood", title: "Eat Mood", desc: "Eat with Ozzy"),
-        Models(model: "SleepM.usdz", pic: "sleepMood", title: "Sleep Mood", desc: "Nighty Night It's for Ozzy to sleep"),
-        Models(model: "NormalM77.usdz", pic: "Study", title: "Study Mood", desc: "Pick your book and study with Ozzy")
+        Models(model: "EatM.usdz", pic: "EatMood", title: "Eat", desc: "Eat with Ozzy"),
+        Models(model: "SleepM.usdz", pic: "sleepMood", title: "Sleep", desc: "Nighty Night It's for Ozzy to sleep"),
+        Models(model: "NormalM77.usdz", pic: "Study", title: "Study", desc: "Pick your book and study with Ozzy")
     ]
     
         var body: some View {
@@ -55,7 +55,7 @@ struct ModesSheet: View {
                                 .listRowBackground(Color("List"))
                                 .background(Color("List"))
                             }.padding(.vertical)
-            }.navigationBarTitle("Choose Mood")
+            }.navigationBarTitle("Choose Task")
                             .scrollContentBackground(.hidden)
                             .background(Color("Background"))
             

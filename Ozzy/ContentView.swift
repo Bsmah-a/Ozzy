@@ -3,6 +3,7 @@ import SwiftUI
 import ARKit
 import SceneKit
 
+
 class ARViewCoordinator: NSObject, ObservableObject, UIGestureRecognizerDelegate {
     var sceneView: ARSCNView?
     
@@ -35,10 +36,11 @@ struct ARViewContainer: UIViewRepresentable {
         
         // Add pinch gesture recognizer for scaling the model with pinch gesture
         let pinchGesture = UIPinchGestureRecognizer(target: coordinator, action: #selector(ARViewCoordinator.handlePinch(_:)))
-        sceneView.addGestureRecognizer(pinchGesture)
+        pinchGesture.delegate = coordinator
+               sceneView.addGestureRecognizer(pinchGesture)
 
-        return sceneView
-    }
+               return sceneView
+           }
 
     func updateUIView(_ uiView: ARSCNView, context: Context) {
         // Call loadModel method to load the new model when selectedModel changes
@@ -73,6 +75,14 @@ struct ContentView: View {
     @StateObject private var viewModel = ViewModel() // ViewModel instance
 
     var body: some View {
+        
+       // if UserDefaults.standard.screenShow{
+        //    ContentView()
+       // }
+      //  else{
+      //      Tutorial()
+      //  }
+        
         ARViewContainer(selectedModel: $viewModel.selectedModel)
             .edgesIgnoringSafeArea(.all)
             .sheet(isPresented: $isModesSheetPresented, content: {
