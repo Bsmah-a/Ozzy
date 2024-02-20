@@ -18,8 +18,8 @@ private let onBoardingSteps: [OnBoardingStep] = [
 
 struct Tutorial: View {
     
-    @AppStorage("onboardingCompleted")
-    var onboardingCompleted: Bool = false
+    //@AppStorage("onboardingCompleted")
+    //var onboardingCompleted: Bool = false
     
     // @AppStorage("screenShow")
     //  var screenShow: Bool = false
@@ -27,20 +27,20 @@ struct Tutorial: View {
     @State private var currentStep = 0
     @State private var navigateToOtherView = false
     
-    init() {
-        UIScrollView.appearance().bounces = false
-        print(onboardingCompleted,"🤣")
-    }
+  //  init() {
+       // UIScrollView.appearance().bounces = false
+      //  print(onboardingCompleted,"🤣")
+    
     
     var body: some View {
-        if onboardingCompleted {
+      //  if onboardingCompleted {
             // Onboarding has been completed, navigate to the main view.
            ContentView()
-                .onAppear{
-                    onboardingCompleted = true
-                    print(onboardingCompleted,"😀")
-                }
-        } else {
+                //.onAppear{
+                 //   onboardingCompleted = true
+                 //   print(onboardingCompleted,"😀")
+               // }
+     //   } else {
             NavigationView {
                 ZStack {
                     // Background Image
@@ -142,7 +142,8 @@ struct Tutorial: View {
 //                onboardingCompleted = true}
             
             
-        }
+        
+}
 }
     
     struct Tutorial_Previews: PreviewProvider {
@@ -150,7 +151,7 @@ struct Tutorial: View {
             Tutorial()
         }
     }
-}
+
     extension Color {
         init(hex: String) {
             var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
